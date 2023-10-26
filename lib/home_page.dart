@@ -96,12 +96,7 @@ class _HomePageState extends State<HomePage> {
                   ],
                 )),
           ),
-//             FloatingActionButton(onPressed: ()=>     Navigator.of(context).push(MaterialPageRoute(
-//                             builder: (context) => Add_Page()))
-// // (Navigator.of(context).push(MaterialPageRoute(builder: (context)=>add()))
 
-// // )
-// , child: Icon(Icons.add))
         ],
       ),
       floatingActionButton: FloatingActionButton(
@@ -112,150 +107,6 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
-
-  // Widget add() {
-  //   return Scaffold(
-  //     body: Column(children: [
-  //       TextField(
-  //         controller: _fnameController,
-  //         decoration: const InputDecoration(
-  //             hintText: 'Contact First Name',
-  //             border: OutlineInputBorder(
-  //                 borderRadius: BorderRadius.all(
-  //               Radius.circular(10),
-  //             ))),
-  //       ),
-  //       const SizedBox(height: 10),
-  //       TextField(
-  //         controller: _lnameController,
-  //         decoration: const InputDecoration(
-  //             hintText: 'Contact Last Name',
-  //             border: OutlineInputBorder(
-  //                 borderRadius: BorderRadius.all(
-  //               Radius.circular(10),
-  //             ))),
-  //       ),
-  //       const SizedBox(height: 10),
-  //       TextField(
-  //         controller: _telephoneController,
-  //         keyboardType: TextInputType.number,
-  //         maxLength: 10,
-  //         decoration: const InputDecoration(
-  //             hintText: 'Contact Number',
-  //             border: OutlineInputBorder(
-  //                 borderRadius: BorderRadius.all(
-  //               Radius.circular(10),
-  //             ))),
-  //       ),
-  //       const SizedBox(height: 10),
-  //       TextField(
-  //         controller: _emailController,
-  //         keyboardType: TextInputType.emailAddress,
-  //         maxLength: 10,
-  //         decoration: const InputDecoration(
-  //             hintText: 'Email',
-  //             border: OutlineInputBorder(
-  //                 borderRadius: BorderRadius.all(
-  //               Radius.circular(10),
-  //             ))),
-  //       ),
-  //       const SizedBox(height: 10),
-  //       TextField(
-  //         controller: _workController,
-  //         keyboardType: TextInputType.text,
-  //         maxLength: 10,
-  //         decoration: const InputDecoration(
-  //             hintText: 'Work',
-  //             border: OutlineInputBorder(
-  //                 borderRadius: BorderRadius.all(
-  //               Radius.circular(10),
-  //             ))),
-  //       ),
-  //       const SizedBox(height: 10),
-  //       TextField(
-  //         controller: _site_da_webController,
-  //         keyboardType: TextInputType.text,
-  //         maxLength: 10,
-  //         decoration: const InputDecoration(
-  //             hintText: 'site da web',
-  //             border: OutlineInputBorder(
-  //                 borderRadius: BorderRadius.all(
-  //               Radius.circular(10),
-  //             ))),
-  //       ),
-  //       const SizedBox(height: 10),
-
-  //       // const SizedBox(height: 10),
-  //       Row(
-  //         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-  //         children: [
-  //           ElevatedButton(
-  //               onPressed: () {
-  //                 //
-
-  //                 String first_name = _fnameController.text.trim();
-  //                 num telephone = _telephoneController.toString() as num;
-  //                 String last_name = _lnameController.text;
-  //                 String email = _emailController.text;
-  //                 String work = _workController.text;
-  //                 String site_da_work = _workController.text;
-
-  //                 if (first_name.isNotEmpty) {
-  //                   setState(() {
-  //                     _fnameController.text = '';
-  //                     _workController.text = '';
-  //                     _emailController.text = '';
-  //                     _telephoneController.text = '';
-  //                     _site_da_webController.text = '';
-  //                     _lnameController.text = '';
-  //                     Navigator.of(context).pop();
-  //                     contacts.add(Contact(
-  //                         first_name: first_name,
-  //                         email: email,
-  //                         telephone: telephone,
-  //                         work: work,
-  //                         site_da_work: site_da_work,
-  //                         last_name: last_name));
-  //                   });
-  //                 }
-  //                 //
-  //               },
-  //               child: const Text('Save')),
-  //           ElevatedButton(
-  //               onPressed: () {
-  //                 //
-  //                 String first_name = _fnameController.text.trim();
-  //                 num telephone = _telephoneController.toString() as num;
-  //                 String last_name = _lnameController.text;
-  //                 String email = _emailController.text;
-  //                 String work = _workController.text;
-  //                 String site_da_work = _workController.text;
-  //                 if (first_name.isNotEmpty) {
-  //                   setState(() {
-  //                     _fnameController.text = '';
-  //                     _workController.text = '';
-  //                     _emailController.text = '';
-  //                     _telephoneController.text = '';
-  //                     _site_da_webController.text = '';
-  //                     _lnameController.text = '';
-  //                     contacts[selectedIndex].first_name = first_name;
-  //                     contacts[selectedIndex].telephone = telephone;
-  //                     contacts[selectedIndex].last_name = last_name;
-  //                     contacts[selectedIndex].email = email;
-  //                     contacts[selectedIndex].site_da_work = site_da_work;
-  //                     contacts[selectedIndex].work = work;
-
-  //                     selectedIndex = -1;
-  //                   });
-  //                 }
-  //                 //
-  //               },
-  //               child: const Text('Update')),
-  //         ],
-  //       )
-  //     ]),
-  //   );
-  // }
 
   Widget getRow(int index) {
     return Card(
@@ -294,6 +145,10 @@ class _HomePageState extends State<HomePage> {
                   _fnameController.text = contacts[index].first_name;
                   _telephoneController.text =
                       contacts[index].telephone.toString();
+                  _lnameController.text = contacts[index].last_name;
+                  _emailController.text = contacts[index].email;
+                  _site_da_webController.text = contacts[index].site_da_work;
+                  _workController.text = contacts[index].work;
                   setState(() {
                     selectedIndex = index;
                   });
@@ -311,28 +166,6 @@ class _HomePageState extends State<HomePage> {
                 },
                 child: Text("delete"),
               ),
-
-              // InkWell(
-              //     onTap: () {
-              //       //
-              //       _fnameController.text = contacts[index].first_name;
-              //       _telephoneController.text =
-              //           contacts[index].telephone.toString();
-              //       setState(() {
-              //         selectedIndex = index;
-              //       });
-              //       //
-              //     },
-              //     child: const Icon(Icons.edit)),
-              // InkWell(
-              //     onTap: (() {
-              //       //
-              //       setState(() {
-              //         contacts.removeAt(index);
-              //       });
-              //       //
-              //     }),
-              //     child: const Icon(Icons.delete)),
             ],
           ),
         ),

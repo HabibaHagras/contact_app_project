@@ -182,17 +182,12 @@ class _Add_PageState extends State<Add_Page> {
                       ))),
                 ),
                 const SizedBox(height: 10),
-                // const SizedBox(height: 10),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     ElevatedButton(
                         onPressed: () {
-                              // Navigator.of(context).push(MaterialPageRoute(
-                              //   builder: (context)=>const HomePage()
-                              // ));
                         
-                          //
 
                           String first_name = _fnameController.text.trim();
                           String telephone = _telephoneController.text;
@@ -217,9 +212,7 @@ class _Add_PageState extends State<Add_Page> {
                                   work: work,
                                   site_da_work: site_da_work,
                                   last_name: last_name));
-                              // Navigator.of(context).push(MaterialPageRoute(
-                              //   builder: (context)=>const HomePage()
-                              // ));
+                        
                             })
                             
                             ;
